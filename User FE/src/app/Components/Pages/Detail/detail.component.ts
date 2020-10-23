@@ -1,3 +1,5 @@
+import { AnimeService } from './../../../shared/anime.service';
+import { Anime } from './../../../anime.model';
 import {Component} from '@angular/core';
 
 @Component({
@@ -7,5 +9,16 @@ import {Component} from '@angular/core';
 })
 
 export class DetailComponent {
+    anime$ : Anime[];
 
+    constructor(private animeService:AnimeService){
+
+    }
+
+    ngOnInit() {
+      return this.animeService.getAnimes().subscribe(
+          data=> this.anime$ = data
+      );
+        
+    }
 }

@@ -1,3 +1,4 @@
+import { AnimeService } from './shared/anime.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -33,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule , ReactiveFormsModule,
     BsDropdownModule.forRoot()
   ],
-  providers: [],
+  providers: [AnimeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
